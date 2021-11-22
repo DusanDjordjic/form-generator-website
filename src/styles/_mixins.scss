@@ -16,7 +16,7 @@
     box-shadow: 1px 0 10px 0px rgba($color-dark-0, $alpha: 0.3);
   }
 }
-@mixin my-button($bg: $color-main, $clr: $color-light) {
+@mixin my-button($bg: $color-light, $clr: $color-main) {
   display: inline-block;
   padding: 0.5em 1em;
   font-size: $font-size-normal;

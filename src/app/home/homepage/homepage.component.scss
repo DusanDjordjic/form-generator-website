@@ -15,9 +15,11 @@ section {
     text-align: center;
     h1 {
       font-size: $font-size-xl;
+      margin-bottom: 0.2em;
     }
     p {
       font-size: $font-size-md;
+      margin-bottom: 1.3em;
     }
     button {
       @include my-button($color-light, $color-main);

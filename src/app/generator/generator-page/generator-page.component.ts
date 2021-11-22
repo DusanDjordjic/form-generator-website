@@ -37,6 +37,8 @@ export class GeneratorPageComponent implements OnInit {
       //     );
       //   }
       // }
+      this.outputHtml = '';
+      this.outputTS = '';
       this.outputHtml = this.formStructure.generateHTML().trim();
       this.outputTS = this.formStructure.generateTS().trim();
     } catch (error) {
