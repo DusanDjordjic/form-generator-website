@@ -7,6 +7,8 @@ $font-size-small: 0.8rem;
 $font-size-normal: 1rem;
 $font-size-md: 1.5rem;
 $font-size-lg: 2rem;
+$font-size-xl: 2.5rem;
+$font-size-xxl: 4rem;
 
 // -> Wegihts
 
@@ -19,10 +21,15 @@ $font-weight-b: 700;
 $color-main: rgb(89, 147, 255);
 $color-main-dark-0: rgb(55, 108, 207);
 $color-main-dark-1: rgb(35, 77, 153);
-$color-dark-0: #424242;
+$color-dark-0: #242424;
 $color-dark-1: #1c1c1c;
 $color-light: #f8f8f8;
 
 // > Borders
 $border-radius-sm: 0.75em;
 $border-radius-normal: 1em;
+$border-radius-round: 1000em;
+
+// > Layout
+// -> Grid
+$grid-gap: 32px;

@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/variables";
+@import "./styles/mixins";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -11,10 +17,22 @@ body {
   color: $color-light;
   background-color: $color-dark-0;
 }
+button {
+  @include my-button();
+}
 .container {
   margin: 0 auto;
   max-width: 100%;
   padding: 0 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0.5em;
 }
 @media only screen and (min-width: 500px) {
   .container {
