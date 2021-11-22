@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutpageComponent } from './about/aboutpage/aboutpage.component';
+import { ErrorpageComponent } from './core/errorpage/errorpage.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
+import { PricingpageComponent } from './pricing/pricingpage/pricingpage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HomepageComponent, pathMatch: 'full' },
+  { path: 'about', component: AboutpageComponent },
+  { path: 'pricing', component: PricingpageComponent },
+  { path: '**', component: ErrorpageComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

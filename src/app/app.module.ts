@@ -5,9 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MainNavigationComponent } from './core/main-navigation/main-navigation.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
+import { AboutpageComponent } from './about/aboutpage/aboutpage.component';
+import { PricingpageComponent } from './pricing/pricingpage/pricingpage.component';
+import { ErrorpageComponent } from './core/errorpage/errorpage.component';
 
 @NgModule({
-  declarations: [AppComponent, MainNavigationComponent],
+  declarations: [AppComponent, MainNavigationComponent, HomepageComponent, AboutpageComponent, PricingpageComponent, ErrorpageComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
