@@ -1,0 +1,45 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+nav {
+  padding: 1em;
+  background-color: $color-main;
+  color: $color-light;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+
+  .brand {
+    margin-right: 2em;
+    font-size: $font-size-md;
+    img {
+      max-height: 2em;
+    }
+  }
+  .links-wrapper {
+    display: flex;
+    .link {
+      margin: 0 0.5em;
+      a {
+        padding: 0.5em 1em;
+        color: $color-light;
+        text-decoration: none;
+        border-radius: $border-radius-sm;
+        @include transition(background-color 0.1s);
+        &:hover {
+          background-color: $color-main-dark-1;
+        }
+      }
+      &.active {
+        a {
+          background-color: $color-main-dark-0;
+          &:hover {
+            background-color: $color-main-dark-1;
+          }
+        }
+      }
+    }
+  }
+  .end {
+    margin-left: auto;
+  }
+}
