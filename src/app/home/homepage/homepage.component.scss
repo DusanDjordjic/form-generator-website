@@ -4,16 +4,30 @@ section {
   margin: 100px 0;
 }
 .intro-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $grid-gap;
-  .card {
+  margin: 0;
+  padding: 100px 0;
+  background-color: $color-main;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
     h1 {
-      font-weight: $font-weight-normal;
-      .main-text {
-        font-weight: $font-weight-b;
-        font-size: $font-size-xl;
-        color: $color-main;
+      font-size: $font-size-xl;
+    }
+    p {
+      font-size: $font-size-md;
+    }
+    ul {
+      margin-top: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      gap: $grid-gap;
+      a {
+        @include my-icon;
       }
     }
   }
@@ -28,11 +42,17 @@ section {
 }
 @include md {
   .intro-section {
-    grid-template-columns: repeat(2, 1fr);
+    .content {
+      h1 {
+        font-size: $font-size-xxl;
+      }
+    }
   }
   .desc-section {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+@include lg {
 }
 @include xl {
   .desc-section {
