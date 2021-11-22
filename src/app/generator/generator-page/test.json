@@ -1,0 +1,44 @@
+{
+  "name": "forma",
+  "children": [
+    {
+      "name": "ime",
+      "type": "text"
+    },
+    {
+      "name": "prezime",
+      "type": "text"
+    },
+    {
+      "name": "telefon",
+      "type": "email"
+    },
+
+    {
+      "name": "adresa",
+      "children": [
+        {
+          "name": "grad",
+          "type": "text"
+        },
+        {
+          "name": "ulica",
+          "children": [
+            {
+              "name": "nazivUlice",
+              "type": "text"
+            },
+            {
+              "name": "bivsiNaziv",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "broj",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

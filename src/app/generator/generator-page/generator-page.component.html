@@ -6,24 +6,22 @@
         <div>
           <h2>Input</h2>
           <p>Input JSON</p>
-          <textarea name="input-text"></textarea>
+          <textarea name="inputText" [(ngModel)]="inputText"></textarea>
         </div>
-        <button>Generate</button>
+        <button (click)="onSubmit()">Generate</button>
         <div class="error-log">
-          <p class="error">Error happend: there is an error</p>
-          <p class="error">Error happend: there is an error</p>
-          <p class="error">Error happend: there is an error</p>
+          <p class="error" *ngFor="let err of errors">{{ err }}</p>
         </div>
       </div>
       <div>
         <div>
           <h2>Output</h2>
           <p>Output HTML</p>
-          <textarea name="output-html"></textarea>
+          <textarea name="outputHtml" [(ngModel)]="outputHtml"></textarea>
         </div>
         <div>
           <p>Output Typescript</p>
-          <textarea name="output-ts"></textarea>
+          <textarea name="outputTS" [(ngModel)]="outputTS"></textarea>
         </div>
       </div>
     </div>

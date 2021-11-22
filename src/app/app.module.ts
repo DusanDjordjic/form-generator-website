@@ -10,10 +10,19 @@ import { AboutpageComponent } from './about/aboutpage/aboutpage.component';
 import { PricingpageComponent } from './pricing/pricingpage/pricingpage.component';
 import { ErrorpageComponent } from './core/errorpage/errorpage.component';
 import { GeneratorPageComponent } from './generator/generator-page/generator-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, MainNavigationComponent, HomepageComponent, AboutpageComponent, PricingpageComponent, ErrorpageComponent, GeneratorPageComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    MainNavigationComponent,
+    HomepageComponent,
+    AboutpageComponent,
+    PricingpageComponent,
+    ErrorpageComponent,
+    GeneratorPageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

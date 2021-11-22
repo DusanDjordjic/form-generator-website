@@ -1,1 +1,37 @@
-<p>aboutpage works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="ime">ime</label>
+    <input type="text" id="ime" formControlName="ime" />
+  </div>
+  <div>
+    <label for="prezime">prezime</label>
+    <input type="text" id="prezime" formControlName="prezime" />
+  </div>
+  <div>
+    <label for="telefon">telefon</label>
+    <input type="email" id="telefon" formControlName="telefon" />
+  </div>
+  <div formGroupName="adresa">
+    <h3>adresa</h3>
+    <div>
+      <label for="grad">grad</label>
+      <input type="text" id="grad" formControlName="grad" />
+    </div>
+    <div formGroupName="ulica">
+      <h3>ulica</h3>
+      <div>
+        <label for="nazivUlice">nazivUlice</label>
+        <input type="text" id="nazivUlice" formControlName="nazivUlice" />
+      </div>
+      <div>
+        <label for="bivsiNaziv">bivsiNaziv</label>
+        <input type="text" id="bivsiNaziv" formControlName="bivsiNaziv" />
+      </div>
+    </div>
+    <div>
+      <label for="broj">broj</label>
+      <input type="text" id="broj" formControlName="broj" />
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
