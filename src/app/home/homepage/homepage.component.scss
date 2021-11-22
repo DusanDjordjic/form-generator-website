@@ -19,6 +19,9 @@ section {
     p {
       font-size: $font-size-md;
     }
+    button {
+      @include my-button($color-light, $color-main);
+    }
     ul {
       margin-top: 2em;
       display: flex;
@@ -33,11 +36,41 @@ section {
   }
 }
 .desc-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $grid-gap;
-  article {
-    @include my-card;
+  h2 {
+    text-align: center;
+    font-size: $font-size-lg;
+    margin-bottom: 2em;
+  }
+  .desc-section-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $grid-gap;
+    article {
+      @include my-card;
+      position: relative;
+      .icon {
+        @include my-icon;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(30%, -30%);
+      }
+      .content {
+        ul {
+          margin-left: 2em;
+        }
+      }
+      footer {
+        padding-top: 1em;
+      }
+    }
+  }
+}
+.action-section {
+  .banner {
+    button {
+      @include my-button($color-light, $color-main);
+    }
   }
 }
 @include md {
@@ -49,13 +82,17 @@ section {
     }
   }
   .desc-section {
-    grid-template-columns: repeat(2, 1fr);
+    .desc-section-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 @include lg {
 }
 @include xl {
   .desc-section {
-    grid-template-columns: repeat(3, 1fr);
+    .desc-section-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

@@ -10,8 +10,9 @@
   color: $color-main;
   font-size: $font-size-md;
   border-radius: $border-radius-round;
-  @include transition(box-shadow 0.3s);
+  @include transition(background-color 0.3s, box-shadow 0.3s);
   &:hover {
+    background-color: $color-main-dark-1;
     box-shadow: 1px 0 10px 0px rgba($color-dark-0, $alpha: 0.3);
   }
 }
@@ -25,7 +26,7 @@
   border-radius: $border-radius-normal;
   font-weight: $font-weight-md;
   cursor: pointer;
-  @include transition(color 0.1s, background-color 0.1s);
+  @include transition(color 0.3s, background-color 0.3s);
   &:hover {
     background-color: $color-main-dark-1;
   }
@@ -39,10 +40,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @include transition(border-color 0.1s, box-shadow 0.1s);
+  @include transition(border-color 0.3s, box-shadow 0.3s);
   &:hover {
     border-color: transparent;
-    box-shadow: 1px 0 10px -5px rgba($color-light, $alpha: 0.5);
+    box-shadow: 1px 0 10px 0px rgba($color-light, $alpha: 0.2);
   }
   footer {
     margin-top: auto;
