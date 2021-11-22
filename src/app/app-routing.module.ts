@@ -7,6 +7,7 @@ import { PricingpageComponent } from './pricing/pricingpage/pricingpage.componen
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
+  { path: 'generator', component: PricingpageComponent },
   { path: 'about', component: AboutpageComponent },
   { path: 'pricing', component: PricingpageComponent },
   { path: '**', component: ErrorpageComponent },
