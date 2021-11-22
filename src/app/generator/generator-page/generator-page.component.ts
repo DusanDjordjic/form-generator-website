@@ -19,36 +19,24 @@ export class GeneratorPageComponent implements OnInit {
   ngOnInit(): void {}
   onSubmit() {
     this.errors = [];
+    this.formStructure = new Group('form');
+    this.outputHtml = '';
+    this.outputTS = '';
     try {
       this.jsonInput = JSON.parse(this.inputText);
-      console.log(this.jsonInput);
       if (!this.generateSructure(this.jsonInput, this.formStructure)) return;
 
-      console.log('a');
-
-      // for (let i = 0; i < this.jsonInput.children.length; i++) {
-      //   if (this.jsonInput[i].children === undefined) {
-      //     this.formStructure.children.push(
-      //       new Control(this.jsonInput[i].name, this.jsonInput[i].type || '')
-      //     );
-      //   } else {
-      //     this.formStructure.children.push(
-      //       new Group(this.jsonInput[i].name, this.jsonInput[i].children || '')
-      //     );
-      //   }
-      // }
-      this.outputHtml = '';
-      this.outputTS = '';
       this.outputHtml = this.formStructure.generateHTML().trim();
       this.outputTS = this.formStructure.generateTS().trim();
     } catch (error) {
-      console.log(this.jsonInput);
-
       this.errors.push(<string>error);
     }
   }
 
   generateSructure(jsonInput: any, currentControl: Group): boolean {
+    // > Generate tree-like object from passed JSON
+    // > If format doesn`t match requirements function returns false
+    // > And whole operation stops
     if (!Group.isGroup(jsonInput)) {
       this.errors.push(
         `Error: Group name: ${jsonInput.name}; Group must be an object with 'name': string & 'children': Array properties`

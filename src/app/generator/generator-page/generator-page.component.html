@@ -27,3 +27,60 @@
     </div>
   </div>
 </section>
+<section>
+  <div class="container">
+    <h2 id="how-it-works">How it works</h2>
+    <p>
+      There are two ways to generating form structure. <span>JSON way</span> and
+      <span>interactive way</span>
+    </p>
+    <h3 id="json-way">JSON way</h3>
+    <p>
+      You can generate form html and typescript code from JSON string. There are
+      Controls representing input field and Groups that are just collections of
+      Controls.
+    </p>
+    <h4 id="groups">Groups</h4>
+    <p>
+      Each form structure must start with the group. First group is
+      <code>form</code> tag and it&#39;s must have. Group is nothing but an
+      object that has <code>name</code> and <code>children</code> properties.
+      Name property is of type string and it represents the name of the group
+      and children is an array of controls or other groups. You see now how you
+      can nest one in another.
+    </p>
+    <h4 id="controls">Controls</h4>
+    <p>
+      For the form to work we must add some controls, what`s the use of the form
+      if we dont have any fields to write to.
+    </p>
+    <p>
+      Control is an object that has <code>name</code>property, same as group and
+      <code>type</code> property that defines type of an input. Types are the
+      same as
+      <a href="https://www.w3schools.com/html/html_form_input_types.asp"
+        >html input types.</a
+      >
+    </p>
+    <p>Here is an example of JSON that you would pass as input</p>
+    <pre><code>
+{{'{'}}
+    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"my-form"</span>,
+    <span class="hljs-attr">"children"</span>: [
+    {{'{'}}
+        <span class="hljs-attr">"name"</span>:<span class="hljs-string">"firstname"</span>,
+        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"text"</span>
+        {{'}'}},
+        {{'{'}}
+        <span class="hljs-attr">"name"</span>:<span class="hljs-string">"lastname"</span>,
+        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"text"</span>
+        {{'}'}},
+        {{'{'}}
+        <span class="hljs-attr">"name"</span>:<span class="hljs-string">"age"</span>,
+        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"number"</span>
+        {{'}'}}
+    ]
+{{'}'}}
+    </code></pre>
+  </div>
+</section>
