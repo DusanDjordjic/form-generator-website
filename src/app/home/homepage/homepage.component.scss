@@ -1,0 +1,41 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+section {
+  margin: 100px 0;
+}
+.intro-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-gap;
+  .card {
+    h1 {
+      font-weight: $font-weight-normal;
+      .main-text {
+        font-weight: $font-weight-b;
+        font-size: $font-size-xl;
+        color: $color-main;
+      }
+    }
+  }
+}
+.desc-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-gap;
+  article {
+    @include my-card;
+  }
+}
+@include md {
+  .intro-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .desc-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@include xl {
+  .desc-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

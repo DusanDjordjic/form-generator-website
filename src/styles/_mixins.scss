@@ -1,7 +1,75 @@
+// > Elements
+@mixin my-button($bg: $color-main, $clr: $color-light) {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: $font-size-normal;
+  background-color: $bg;
+  color: $clr;
+  border: none;
+  border-radius: $border-radius-normal;
+  font-weight: $font-weight-md;
+  cursor: pointer;
+  @include transition(color 0.1s, background-color 0.1s);
+  &:hover {
+    background-color: $color-main-dark-1;
+  }
+}
+@mixin my-card() {
+  padding: 1em;
+  background-color: rgba($color-light, 0.05);
+  border: 1px solid rgba($color-light, 0.05);
+  color: $color-light;
+  border-radius: $border-radius-normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include transition(border-color 0.1s, box-shadow 0.1s);
+  &:hover {
+    border-color: transparent;
+    box-shadow: 1px 0 10px -5px rgba($color-light, $alpha: 0.5);
+  }
+  footer {
+    margin-top: auto;
+  }
+}
+// > Utility
 @mixin transition($x...) {
   -webkit-transition: $x;
   -moz-transition: $x;
   -ms-transition: $x;
   -o-transition: $x;
   transition: $x;
+}
+
+// > Layout
+@mixin xs {
+  @media only screen and (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin md {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media only screen and (min-width: 1400px) {
+    @content;
+  }
 }

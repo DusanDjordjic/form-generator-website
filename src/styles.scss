@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/variables";
+@import "./styles/mixins";
 html,
 body {
   height: 100%;
@@ -10,4 +11,7 @@ body {
   font-family: $font-family-main;
   color: $color-light;
   background-color: $color-dark-0;
+}
+button {
+  @include my-button();
 }
